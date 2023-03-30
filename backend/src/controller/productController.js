@@ -47,9 +47,6 @@ const productController = {
 
   getAllProducts: async (req, res) => {
     const result = await pool.query('SELECT * FROM produk');
-    if (!result.rows.length) {
-      throw new Error('Data belum ada');
-    }
 
     const resultMap = result.rows.map(mapKeyValueResponse);
 
